@@ -87,7 +87,16 @@ console.log(fraseArry);
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
-
+function deleteOne(stringa, booleano) {
+  if (booleano === true) {
+    return stringa.substring(1);
+  } else {
+    return stringa.substring(0, stringa.length - 1);
+  }
+}
+const stringa = "Gatto";
+const booleano = false;
+console.log(deleteOne(stringa, booleano));
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
