@@ -103,7 +103,7 @@ console.log(deleteOne(stringa, booleano));
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
 function onlyLetters(stringa) {
-  return stringa.replace(/\d/g, "");
+  return stringa.replace(/\d/g, ""); // il "/\d/ mi toglie il ptimo numero, con l'aggiunta di g toglie tuti i potenziali numeri"
 }
 
 console.log(onlyLetters("io ho 2 gatti"));
@@ -111,11 +111,40 @@ console.log(onlyLetters("io ho 2 gatti"));
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
+function isThisAnEmail(stringa) {
+  if (stringa.includes("@")) {
+    //se la stringa inglude la chiuocciola allora ritornala
+    return stringa;
+  } else {
+    return console.log("Inserisci un'email"); //sennò manda avviso
+  }
+}
 
+console.log(isThisAnEmail("email@gmail.com"));
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+function whatDayIsIt() {
+  // prima calcoliamo tutti i giorni della settimana
+  const daysOfWeek = [
+    "Domenica",
+    "Lunedì",
+    "Martedì",
+    "Mercoledì",
+    "Giovedì",
+    "Venerdì",
+    "Sabato",
+  ];
 
+  //ottieni l'oggetto della data corrente
+  const currentDate = new Date();
+
+  // ottieni il numero corrispondente alla data di oggi da [0 domenica, 1 lunedì etc]
+  const dayOfWeekIndex = currentDate.getDay();
+  // restituisci il giorno corrispondente alla data di oggi
+  return daysOfWeek[dayOfWeekIndex];
+}
+console.log(whatDayIsIt());
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
   Deve invocare la precedente funzione dice() il numero di volte specificato nel parametro, e deve tornare un oggetto contenente una proprietà "sum":
