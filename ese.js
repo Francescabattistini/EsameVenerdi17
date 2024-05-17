@@ -202,7 +202,21 @@ console.log(howManyDays("2024-05-15"));
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
-
+function isTodayMyBirthday(data) {
+  const dataCorrente = new Date();
+  const dataOggi = dataCorrente.getDate();
+  const meseCorrente = dataCorrente.getMonth();
+  console.log(meseCorrente);
+  const dataCompleanno = new Date(data);
+  const giornoCompleanno = dataCompleanno.getDate();
+  const meseCompleanno = dataCompleanno.getMonth();
+  if (giornoCompleanno === dataOggi && meseCompleanno == meseCorrente) {
+    return "Tanti Auguri";
+  } else {
+    return "mi dispiace non è il tuo compleanno";
+  }
+}
+console.log(isTodayMyBirthday("1992-11-13"));
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
