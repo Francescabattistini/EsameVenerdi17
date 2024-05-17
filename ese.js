@@ -125,7 +125,7 @@ console.log(isThisAnEmail("email@gmail.com"));
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
 function whatDayIsIt() {
-  // prima calcoliamo tutti i giorni della settimana
+  // prima calcoliamo tutti i giorni della settimana sotto Array
   const daysOfWeek = [
     "Domenica",
     "Lunedì",
@@ -157,6 +157,28 @@ console.log(whatDayIsIt());
       values: [3, 3, 4]
   }
 */
+
+const arrayNumeriEstratti = [];
+function rollTheDices(numero) {
+  // 1. scrivi una funzione chiamata roll...
+
+  //2. deve invocare la precedente funzione dice() il numero di volte specificato nel parametro
+  //3. ritorna l'oggetto con proprietà "sum"
+
+  let sum = 0; // perchè al primo lancio iniziamo da 0
+  for (let index = 0; index < numero; index++) {
+    // per prendere n volte il valore
+    const valoreDado = dice(); // richiamo il valore del dado
+    arrayNumeriEstratti.push(valoreDado); // salvarsii il numero dei dadi (come segnarselo )
+    sum += valoreDado; // sommo la somma dei valori del dado
+  }
+  return (
+    "la somma dei  numeri estratti è:",
+    sum + " i numeri estratti sono i seguenti",
+    arrayNumeriEstratti
+  );
+}
+console.log(rollTheDices(5)); // quante volte lanciamo il dado
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
