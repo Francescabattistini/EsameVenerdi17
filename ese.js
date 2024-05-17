@@ -102,6 +102,11 @@ console.log(deleteOne(stringa, booleano));
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+function onlyLetters(stringa) {
+  return stringa.replace(/\d/g, "");
+}
+
+console.log(onlyLetters("io ho 2 gatti"));
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
