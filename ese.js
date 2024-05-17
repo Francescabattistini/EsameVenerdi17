@@ -77,10 +77,12 @@ console.log("il numero maggiore è :", numeroMaggiore);
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
-const striga = function splitMe(stinga) {
-  return ["I", "", "LOVE", "", "CATS"];
-};
-console.log(splitMe);
+function splitMe(stringa) {
+  return stringa.split(/\s+/); // è un'espressione regolare che mi ha aiutato a dividere con gli spazi le parole sennò mi divideva tutte le lettere
+}
+const frase = "I love cats";
+const fraseArry = splitMe(frase);
+console.log(fraseArry);
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
